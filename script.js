@@ -6,9 +6,11 @@
 
 
 
-// Cached elements - DOM elements
+// Cached element references - DOM elements
 
-
+const $title = $("#title");
+const $year = $("#year");
+const $rated = $("#rated");
 
 // Event listeners
 
