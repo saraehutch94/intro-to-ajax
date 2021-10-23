@@ -11,13 +11,17 @@
 const $title = $("#title");
 const $year = $("#year");
 const $rated = $("#rated");
+const $form = $("form");
 
 // Event listeners
 
-
+$form.on("submit", handleSubmit);
 
 // Functions
 
+function handleSubmit() {
+    console.log("form submitted");
+};
 
 // Using jQuery's $.ajax() method
 // We use it to request information from a resource using AJAX
