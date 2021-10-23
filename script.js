@@ -34,8 +34,11 @@ const $rated = $("#rated");
 $.ajax("https://www.omdbapi.com/?apikey=18275115&t=joker")
 .then(function(data) {
     // success callback function
-    console.log("promise fulfilled!");
-    console.log(data);
+    // console.log("promise fulfilled!");
+    // console.log(data);
+    $title.text(data.Title);
+    $year.text(data.Year);
+    $rated.text(data.Rated);
 }, function(error) {
     // failure callback function
     console.log("promise failed");
