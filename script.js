@@ -9,11 +9,9 @@ let movieData;
 
 // Cached element references - DOM elements
 
-const $title = $("#title");
-const $year = $("#year");
-const $rated = $("#rated");
 const $form = $("form");
 const $input = $("input[type='text']");
+const $main = $("main");
 
 // Event listeners
 
@@ -51,7 +49,13 @@ function handleSubmit(evt) {
 
 
 function render() {
-    $title.text(movieData.Title);
-    $year.text(movieData.Year);
-    $rated.text(movieData.Rated);
-};
+    $main.html(`
+        <img src="${movieData.Poster}" alt="${movieData.Title}" />
+        <h3>Title</h3>
+        <p id="title">${movieData.Title}</p>
+        <p>Year</p>
+        <p id="year">${movieData.Year}</p>
+        <p>Rating</p>
+        <p id="rated">${movieData.Rated}</p>
+    `);
+}
