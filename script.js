@@ -5,7 +5,7 @@ const API_KEY = "18275115";
 
 // Variables - Data that changes
 
-
+let movieData;
 
 // Cached element references - DOM elements
 
@@ -40,12 +40,18 @@ function handleSubmit(evt) {
     $.ajax(`${BASE_URL}?apikey=${API_KEY}&t=${movieTitle}`)
     .then(function(data) {
         // success callback function
-        $title.text(data.Title);
-        $year.text(data.Year);
-        $rated.text(data.Rated);
+        movieData = data;
+        render();
     }, function(error) {
         // failure callback function
         console.log("promise failed");
         console.log(error);
     });
+};
+
+
+function render() {
+    $title.text(movieData.Title);
+    $year.text(movieData.Year);
+    $rated.text(movieData.Rated);
 };
